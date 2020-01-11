@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect  
 from easyjob.forms import EmployeeForm  
 from easyjob.models import Employee  
@@ -31,3 +32,17 @@ def destroy(request, id):
     employee = Employee.objects.get(id=id)  
     employee.delete()  
     return redirect("/show")  
+=======
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import Template,Context
+
+
+# Create your views here.
+def Company(request):
+    return render(request,'company.html')
+def Applicant(request):
+    return render(request,'registerform.html')
+def Firstpage(request):
+    return render(request,'index.html')
+>>>>>>> master
