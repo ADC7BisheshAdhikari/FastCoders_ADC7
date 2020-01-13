@@ -12,16 +12,18 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Profile',
+            name='Employee',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(max_length=20)),
-                ('last_name', models.CharField(max_length=20)),
-                ('email_id', models.CharField(max_length=20)),
-                ('phoneno', models.IntegerField(verbose_name=10)),
-                ('education', models.CharField(max_length=100)),
-                ('experience', models.CharField(max_length=20)),
-                ('document', models.FileField(upload_to='profiles/pdfs/')),
+                ('cCompanyName', models.CharField(max_length=100)),
+                ('cVacantPost', models.CharField(max_length=100)),
+                ('cVacancyNumber', models.IntegerField(max_length=100)),
+                ('cEmail', models.EmailField(max_length=100)),
+                ('cMobile', models.IntegerField(max_length=10)),
+                ('cLocation', models.CharField(max_length=50)),
             ],
+            options={
+                'db_table': 'Company',
+            },
         ),
     ]

@@ -1,20 +1,11 @@
 from django.db import models
 
-# Create your models here.
-class Profile(models.Model):
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    email_id = models.CharField(max_length=20)
-    phoneno = models.IntegerField(10)
-    education = models.CharField(max_length=100)
-    experience = models.CharField(max_length=20)
-    document = models.FileField(upload_to='profiles/pdfs/')
-
-    def __str__(self):
-        return self.first_name
-
-
-
-
-
-
+class Employee(models.Model):
+    cCompanyName=models.CharField(max_length=100)
+    cVacantPost=models.CharField(max_length=100)
+    cVacancyNumber=models.IntegerField(max_length=100)
+    cEmail=models.EmailField(max_length=100)
+    cMobile=models.IntegerField(max_length=10)
+    cLocation=models.CharField(max_length=50)
+    class Meta:
+        db_table="Company"  
