@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models  
 class Employee(models.Model):
     cCompanyName=models.CharField(max_length=100)
     cVacantPost=models.CharField(max_length=100)
