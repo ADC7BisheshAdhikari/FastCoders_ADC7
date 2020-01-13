@@ -1,0 +1,9 @@
+bin/
+Scripts/
+tcl/
+include/
+Scripts/
+tcl/
+lib/
+*.log
+__pycache__
