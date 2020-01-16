@@ -1,7 +1,10 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect  
 from easyjob.forms import EmployeeForm  
 from easyjob.models import Employee  
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import Template,Context
+from django.core.files.storage import FileSystemStorage
 # Create your views here.  
 def emp(request):  
     if request.method == "POST":  
@@ -32,11 +35,7 @@ def destroy(request, id):
     employee = Employee.objects.get(id=id)  
     employee.delete()  
     return redirect("/show")  
-=======
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import Template,Context
-from django.core.files.storage import FileSystemStorage
+
 
 
 
@@ -54,5 +53,7 @@ def applicant(request):
     return render(request,'registerform.html')
 
 def firstPage(request):
+    search = request.GET.get('search', False)
+    if search:
+        pass
     return render(request,'index.html')
->>>>>>> master
