@@ -13,6 +13,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="well well-sm">
+                    <form class="form-horizontal" method="POST" action="/emp">
+                        {% csrf_token %}
                     <form class="form-horizontal" method="post">
                         <fieldset>
                             <legend class="text-center header">Company</legend>
@@ -21,12 +23,17 @@
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                                 <div class="col-md-8">
                                     
+                                   <label>Company Name:</label>
+                                   {{form.cCompanyName}}
                                     <input id="fname" name="name" type="text" placeholder="Company Name" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                                 <div class="col-md-8">
+                                   
+                                    <label>Vacant Post:</label>
+                                    {{form.cVacantPost}}
                                     <input id="name" name="po" type="text" placeholder="Vacant Post" class="form-control">
                                 </div>
                             </div>
@@ -34,6 +41,8 @@
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                                 <div class="col-md-8">
+                                    <label>Enter Number Of Vacancy:</label>
+                                    {{form.cVacancyNumber}}
                                     <input name="number" name="nimber" type="number" placeholder="Enter number of Vacancy" class="form-control">
                                 </div>
                             </div>
@@ -41,6 +50,8 @@
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                                 <div class="col-md-8">
+                                    <label>Email Address:</label>
+                                    {{form.cEmail}}
                                     <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
                                 </div>
                             </div>
@@ -48,12 +59,19 @@
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                                 <div class="col-md-8">
+                                    <label>Mobile:</label>
+                                    {{form.cMobile}}
                                     <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                                 <div class="col-md-8">
+                                    <label>Location:</label>
+                                    {{form.cLocation}}
+                                </div>
+                            </div>
+                            
                                     <input id="name" name="loc" type="location" placeholder="Location" class="form-control">
                                 </div>
                             </div>
@@ -74,6 +92,7 @@
                             </div>
                         </fieldset>
                     </form>
+
                 </div>
             </div>
         </div>
