@@ -54,12 +54,11 @@ def applicant(request):
         uploaded_file = request.FILES['document']
         fs= FileSystemStorage()
         fs.save(uploaded_file.name,uploaded_file)
-    return render(request,'registerform.html')
+    return render(request,'profile.html')
 
 def firstPage(request):
     search = request.GET.get('search', False)
     if search:
         pass
     return render(request,'index.html')
-
  
